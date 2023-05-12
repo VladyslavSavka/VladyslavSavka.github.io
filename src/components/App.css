@@ -28,7 +28,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
   margin-top: 20px;
-  width: fit-content;
+  width: 700px;
 }
 
 .pokemon-card {

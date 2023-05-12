@@ -52,13 +52,17 @@ const PokemonList: React.FC<Props> = ({ setChosenPokemon }) => {
         ))}
       </select>
       <div className="pokemon-list">
-        {visiblePokemons?.map((pokemon: PokemonType) => (
-          <PokemonItem
-            key={pokemon.name}
-            pokemon={pokemon}
-            setChosenPokemon={setChosenPokemon}
-          />
-        ))}
+        {!visiblePokemons?.length ? (
+          <div>There are no pokemons with such type.</div>
+        ) : (
+          visiblePokemons?.map((pokemon: PokemonType) => (
+            <PokemonItem
+              key={pokemon.name}
+              pokemon={pokemon}
+              setChosenPokemon={setChosenPokemon}
+            />
+          ))
+        )}
         {isFetching ? <div>Fetching more Pokemons...</div> : null}
       </div>
       <button
